@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(#3d3769, #7ac4cd);
+  color: white;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+/********    analogContainer    ***********/
+
+#analogContainer {
+  position: relative;
+  text-align: center;
+}
+.clock {
+  position: relative;
+  margin-bottom: 40px;
+}
+#analogContainer .clock {
+  width: 300px;
+  height: 300px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 10px 50px 50px rgba(0, 0, 0, 0.108),
+    inset 5px 5px 10px rgba(0, 0, 0, 0.29),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.35);
+}
+#analogContainer .clock::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: white;
+  border-radius: 50%;
+  border: black solid 5px;
+  z-index: 2;
+}
+#analogContainer .clock span {
+  position: absolute;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 12px;
+}
+#analogContainer .clock span b {
+  position: absolute;
+  transform: rotate(calc(-30deg * var(--i)));
+  font-size: 25px;
+}
+.clock div {
+  width: 7px;
+  height: var(--h);
+  background-color: var(--clr);
+  position: absolute;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform-origin: center;
+  transform: translateY(-50%);
+}
+
+#analogContainer #showTime {
+  width: 250px;
+  height: 50px;
+  margin: auto;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px #3d3769;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+#showTime span:last-child{
+  font-size: medium;
+  color: white;
+}
+
+#analogContainer #showTime .hour{
+  color: red;
+}
+#analogContainer #showTime .minute{
+  color: blue;
+}
+#analogContainer #showTime .second{
+  color: cyan;
+}
+
+
+/****************    alaramContainer    ******************/
+
+#alaramContainer{
+  width: 450px;
+  min-height: 400px;
+  max-height: 540px;
+  border-radius: 20px;
+  box-shadow: 10px 50px 50px rgba(0, 0, 0, 0.108),
+  inset 5px 5px 10px rgba(0, 0, 0, 0.29),
+  inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+  inset -5px -5px 15px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  position: relative;
+  overflow-y: scroll;
+}
+#alaramContainer::-webkit-scrollbar{
+  display: none;
+}
+#alaramContainer #showTime,
+#alaramContainer #showTime span{
+  margin-top: 10px;
+  font-size: 35px;
+  font-weight: bold;
+  vertical-align: center;
+}
+#alaramContainer hr{
+  width: 80%;
+  margin: 30px auto;
+  border: solid 3px rgb(66 66 113);
+  border-radius: 50%;
+}
+
+/**********    userInput ********/
+.userInput{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  transition: all 0.3s linear;
+}
+.userInput select{
+  border-radius: 15px;
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-shadow: 10px 50px 50px rgba(96, 150, 176, 0.112),
+  inset 5px 5px 10px rgba(127, 196, 207, 0.29),
+  inset 5px 5px 20px rgba(104, 172, 208, 0.2),
+  inset -5px -5px 15px rgba(108, 187, 224, 0.35);
+}
+option{
+  background-color: rgb(86 113 146);
+}
+.userInput button{
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  box-shadow: 10px 50px 50px rgba(96, 150, 176, 0.112),
+    inset 5px 5px 10px rgba(127, 196, 207, 0.29),
+    inset 5px 5px 20px rgba(104, 172, 208, 0.2),
+    inset -5px -5px 15px rgba(108, 187, 224, 0.35);
+}
+
+.userInput button:hover{
+  background-color: rgb(164, 160, 160);
+}
+#currentAlaram{
+  display: flex;
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+}
+ .showCurrentAlaram{
+  display: flex;
+  width: 100%;
+  margin: 10px auto;
+  justify-content: space-between;
+  background-color: rgb(86 113 146);
+  padding: 10px 19px;
+  border-radius: 10px;
+  align-items: center;
+ }
+ .showCurrentAlaram button{
+  padding: 5px 7px;
+  border-radius: 7px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+  background-color: rgba(45, 67, 94, 0.453);
+  color: white;
+ }
+ .showCurrentAlaram button:hover{
+  transform: scale(1.2) rotate(5deg);
+ }

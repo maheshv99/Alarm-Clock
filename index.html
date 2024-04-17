@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alaram Clock</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <!-- creating analog clock -->
+      <section id="analogContainer">
+        <div class="clock">
+          <span style="--i: 1"><b>1</b></span>
+          <span style="--i: 2"><b>2</b></span>
+          <span style="--i: 3"><b>3</b></span>
+          <span style="--i: 4"><b>4</b></span>
+          <span style="--i: 5"><b>5</b></span>
+          <span style="--i: 6"><b>6</b></span>
+          <span style="--i: 7"><b>7</b></span>
+          <span style="--i: 8"><b>8</b></span>
+          <span style="--i: 9"><b>9</b></span>
+          <span style="--i: 10"><b>10</b></span>
+          <span style="--i: 11"><b>11</b></span>
+          <span style="--i: 12"><b>12</b></span>
+
+          <div class="hour" style="--h:75px;--clr:cyan"></div>
+          <div class="minute" style="--h:95px;--clr:blue"></div>
+          <div class="second" style="--h:110px;--clr:red"></div>
+        </div>
+        <div id="showTime">
+          <span class="hour">10 </span>
+          <span class="minute">30 </span>
+          <span class="second">45</span>
+          <span >PM</span>
+        </div>
+      </section>
+       <!-- creating alaram box -->
+      <section id="alaramContainer">
+         <!-- showing the current time -->
+        <div id="showTime">
+        </div>
+        <hr>
+         <!-- taking the input from the user -->
+         <div class="userInput">
+          <div>
+                <select name="hour" id="hour">
+                  <option value="null">Hour</option>
+                </select>
+                <select name="minute" id="minutes">
+                  <option value="null">Minute</option>
+                </select>
+                <select name="seconds" id="seconds">
+                  <option value="null">Seconds</option>
+                </select>
+                <select name="st" id="st">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+          </div>
+          <div>
+            <button id="setAlaramBtn">Set Alarm</button>
+          </div>
+         </div>
+
+         <hr>
+         <div id="currentAlaram">
+          <div><h2>Current Alarm's</h2></div>
+         </div>
+      </section>
+
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
